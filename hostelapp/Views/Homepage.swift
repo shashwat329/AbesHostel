@@ -11,19 +11,18 @@ struct Homepage: View {
     @EnvironmentObject var settings: DarkmodeSettings
     var body: some View {
         TabView {
-                    HomeView()
+            AccountView()
                         .tabItem {
                             Image(systemName: "house.fill")
                             Text("Home")
                         }
                     
-            LeaveFormView()
+                    LeaveFormView()
                         .tabItem {
                             Image(systemName: "info.circle.fill")
                             Text("Leave form")
                         }
-                    
-                    QueryView()
+                    TicketView()
                         .tabItem {
                             Image(systemName: "questionmark.circle.fill")
                             Text("Ticket")
@@ -41,20 +40,6 @@ struct Homepage: View {
                 )
             }
 }
-
-struct QueryView: View {
-    @EnvironmentObject var settings: DarkmodeSettings
-    
-    var body: some View {
-        ZStack {
-            Color(settings.darkmode ? Color.black : Color.white).edgesIgnoringSafeArea(.all)
-            Text("Query Page")
-                .font(.largeTitle)
-                .foregroundColor(settings.darkmode ? .white : .black)
-        }
-    }
-}
-
 
 #Preview {
     Homepage()

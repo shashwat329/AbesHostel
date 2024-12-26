@@ -12,10 +12,13 @@ struct TicketView: View {
     
     var body: some View {
         ZStack {
-            Color(settings.darkmode ? Color.black : Color.white).edgesIgnoringSafeArea(.all)
-            Text("Account Page")
-                .font(.largeTitle)
-                .foregroundColor(settings.darkmode ? .white : .black)
+            Color(settings.darkmode ? Color.black : Color.white)
+                .edgesIgnoringSafeArea(.all)
+            VStack{
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.gray)
+                    .frame(width: .infinity,height: 300)
+            }
         }
     }
 }
