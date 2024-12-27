@@ -17,32 +17,34 @@ struct HomeView: View {
             Color(settings.darkmode ? Color.black : Color.white).edgesIgnoringSafeArea(.all)
             VStack{
                 HStack{
-                    
                     Text("Dashboard")
                         .font(.title)
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(Color(hex: "#1eacfa"))
-                Spacer()
-                VStack(alignment: .leading){
-                    Text("Name of the student: \(studentName)".capitalized)
-                        .font(.caption)
-                    Text("Roll Number: \(rollno)")
-                        .font(.caption)
-                    Text("Admission Number: \(admissionNumber)")
-                        .font(.caption)
-                }
-                .foregroundStyle(Color.white)
-                Spacer()
-                Circle()
-                    .fill(Color(.red))
-                    .frame(width: 100, height: 100)
-                    .overlay{
-                        Text(studentName.first?.uppercased() ?? "?")
-                            .font(.system(size: 60))
-                            .foregroundStyle(Color.white)
+                Text("Welcome to abes Hostel")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(Color(hex: "#1A3636").opacity(0.9))
+                HStack{
+                    VStack(alignment: .leading){
+                        displayDetail(textdescription: "Name of student",name: studentName.capitalized)
+                        displayDetail(textdescription: "Roll Number",name: rollno)
+                        displayDetail(textdescription: "Admission Number",name: admissionNumber)
                     }
+                    .foregroundStyle(Color.blue)
+                    Circle()
+                        .fill(Color(.red))
+                        .frame(width: 100, height: 100)
+                        .overlay{
+                            Text(studentName.first?.uppercased() ?? "?")
+                                .font(.system(size: 60))
+                                .foregroundStyle(Color.white)
+                        }
+                   
+                }
+                Spacer()
             }
         }
     }
