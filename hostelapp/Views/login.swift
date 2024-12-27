@@ -109,7 +109,7 @@ struct login: View {
                     }
                     ){
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color(hex: "#1A3636"))
+                            .fill(Color.blue)
                             .frame(width: 300,height: 48)
                             .overlay{
                                 Text("Login")

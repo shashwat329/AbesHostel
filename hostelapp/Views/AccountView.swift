@@ -17,28 +17,18 @@ struct AccountView: View {
         ZStack {
             Color(settings.darkmode ? Color.black : Color.white).edgesIgnoringSafeArea(.all)
             VStack{
+                Text("Account".capitalized)
+                    .font(.title)
                 HStack{
                     RoundedRectangle(cornerRadius: 10).fill(Color(hex: "#1A3636"))
                         .overlay{
                             HStack{
                                 VStack(alignment: .leading){
-                                    Text("Name of the student: \(studentName)".capitalized)
-                                        .font(.caption)
-                                    Text("Roll Number: \(rollno)")
-                                        .font(.caption)
-                                    Text("Admission Number: \(admissionNumber)")
-                                        .font(.caption)
+                                    displayDetail(textdescription: "Name of student",name: studentName.capitalized)
+                                    displayDetail(textdescription: "Roll Number",name: rollno)
+                                    displayDetail(textdescription: "Admission Number",name: admissionNumber)
                                 }
                                 .foregroundStyle(Color.white)
-                                Spacer()
-                                Circle()
-                                    .fill(Color(.red))
-                                    .frame(width: 100, height: 100)
-                                    .overlay{
-                                        Text(studentName.first?.uppercased() ?? "?")
-                                            .font(.system(size: 60))
-                                            .foregroundStyle(Color.white)
-                                    }
                             }
                             .padding()
                         }

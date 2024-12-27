@@ -19,30 +19,108 @@ struct HomeView: View {
                 HStack{
                     Text("Dashboard")
                         .font(.title)
+                        .foregroundStyle(Color.white)
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(Color(hex: "#1eacfa"))
-                Text("Welcome to abes Hostel")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(Color(hex: "#1A3636").opacity(0.9))
+                .background(Color.blue)
                 HStack{
                     VStack(alignment: .leading){
                         displayDetail(textdescription: "Name of student",name: studentName.capitalized)
                         displayDetail(textdescription: "Roll Number",name: rollno)
                         displayDetail(textdescription: "Admission Number",name: admissionNumber)
                     }
+                    .padding()
                     .foregroundStyle(Color.blue)
-                    Circle()
-                        .fill(Color(.red))
-                        .frame(width: 100, height: 100)
+//                    Circle()
+//                        .fill(Color(.red))
+//                        .frame(width: 100, height: 100)
+//                        .overlay{
+//                            Text(studentName.first?.uppercased() ?? "?")
+//                                .font(.system(size: 60))
+//                                .foregroundStyle(Color.white)
+//                        }
+                }
+                VStack{
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(lineWidth: 3)
+                        .shadow(radius: 10)
+                        .frame(width: .infinity, height: 200)
                         .overlay{
-                            Text(studentName.first?.uppercased() ?? "?")
-                                .font(.system(size: 60))
-                                .foregroundStyle(Color.white)
+                            VStack{
+                                HStack{
+                                    Text("announcements".uppercased())
+                                        .foregroundColor(.red)
+                                        .bold()
+                                    Image(systemName: "horn")
+                                }
+                                VStack(alignment: .leading){
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .fill(Color.gray.opacity(0.4))
+                                        .overlay{
+                                            Text("Wifi will be down for a few minutes")
+                                        }
+                                        .frame(width: 300,height: 40)
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .fill(Color.gray.opacity(0.4))
+                                        .overlay{
+                                            Text("Please check your email")
+                                        }
+                                        .frame(width: 300,height: 40)
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .fill(Color.gray.opacity(0.4))
+                                        .overlay{
+                                            Text("library will be closed this sunday")
+                                        }
+                                        .frame(width: 300,height: 40)
+                                        
+                                        
+                                }
+                                Spacer()
+                            }
+                            .padding()
                         }
-                   
+                        .padding()
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(lineWidth: 3)
+                        .shadow(radius: 10)
+                        .frame(width: .infinity, height: 200)
+                        .overlay{
+                            VStack{
+                                HStack{
+                                    Text("your tickets".uppercased())
+                                        .foregroundColor(.red)
+                                        .bold()
+                                    Image(systemName: "horn")
+                                }
+                                VStack(alignment: .leading){
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .fill(Color.gray.opacity(0.4))
+                                        .overlay{
+                                            displayDetail(textdescription: "Room cleaning is", name: "unassigned")
+                                        }
+                                        .frame(width: 300,height: 40)
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .fill(Color.gray.opacity(0.4))
+                                        .overlay{
+                                            displayDetail(textdescription: "Ticket 2  is assgined to ", name: "tiwari")
+                                                .textCase(.lowercase)
+                                        }
+                                        .frame(width: 300,height: 40)
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .fill(Color.gray.opacity(0.4))
+                                        .overlay{
+                                            displayDetail(textdescription: "Ticket 3  is assgined to", name: "closed")
+                                        }
+                                        .frame(width: 300,height: 40)
+                                        
+                                        
+                                }
+                                Spacer()
+                            }
+                            .padding()
+                        }
+                        .padding()
                 }
                 Spacer()
             }

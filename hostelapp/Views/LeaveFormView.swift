@@ -18,6 +18,8 @@ struct LeaveFormView: View {
     @State private var submitForm: Bool = false
     var body: some View {
         ZStack{
+            Color(settings.darkmode ? .black: .gray.opacity(0.03))
+                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             VStack{
                 Text("Leave form".capitalized)
                     .font(.title)
@@ -52,17 +54,19 @@ struct LeaveFormView: View {
                             .foregroundColor(.white)
                             .padding()
                             .frame(maxWidth: .infinity) // Makes the button expand to the width of the screen
-                            .background(Color(hex: "#1A3636"))
+                            .background(Color.blue)
                             .cornerRadius(10)
                             .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
                     }
                 }
                 if submitForm {
                     Text("Form submitted successfully!")
-                        .foregroundColor(.green)
+                        .foregroundColor(.white)
                 }
             
             }
+            .background(Color.blue)
+            .foregroundStyle(Color.white)
         }
     }
 }

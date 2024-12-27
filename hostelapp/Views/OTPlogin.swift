@@ -81,7 +81,7 @@ struct OTPlogin: View {
                               Text("Send OTP")
                                   .foregroundColor(.white)
                                   .padding()
-                                  .background(Color(hex: "#1A3636"))
+                                  .background(Color.blue)
                                   .cornerRadius(8)
                           }
                   }

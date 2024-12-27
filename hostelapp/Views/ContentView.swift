@@ -44,7 +44,7 @@ struct ContentView: View {
                         Spacer()
                         NavigationLink(destination: login().environmentObject(settings)){
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(hex: "#1A3636"))
+                                .fill(Color.blue)
                                 .frame(width: 297,height: 55)
                                 .overlay{
                                     Text("get started".capitalized)
